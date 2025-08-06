@@ -1,7 +1,7 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/deepylgi/public_html/  # Change to your path
-    - /bin/rm -rf $DEPLOYPATH/*                         # Clear old files (optional)
-    - /bin/cp -R * $DEPLOYPATH                          # Copy all files
-    - /bin/chmod -R 755 $DEPLOYPATH                     # Fix permissions (optional)
+# ---
+# deployment:
+#   tasks:
+#     - export DEPLOYPATH=/home/deepylgi/public_html/  # Change to your path
+#     - /bin/rm -rf $DEPLOYPATH/*                         # Clear old files (optional)
+#     - /bin/cp -R * $DEPLOYPATH                          # Copy all files
+#     - /bin/chmod -R 755 $DEPLOYPATH                     # Fix permissions (optional)
