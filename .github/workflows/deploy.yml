@@ -20,7 +20,7 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} \
-          "cp -R * ~/public_html/"
+          "rm -rf ~/public_html/* && cp -R * ~/public_html/"
         env:
           CPANEL_USER: ${{ secrets.CPANEL_USER }}
           CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
