@@ -1,0 +1,26 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [ main ]  # Trigger on pushes to 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          known_hosts: "just-a-placeholder"  # Bypass host check (not secure for production)
+
+      - name: Deploy via SSH
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} \
+          "rm -rf ~/public_html/* && cp -R * ~/public_html/"
+        env:
+          CPANEL_USER: ${{ secrets.CPANEL_USER }}
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
