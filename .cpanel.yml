@@ -1,0 +1,4 @@
+    deployment:
+      tasks:
+        - export DEPLOYPATH=/home/deepylgi/public_html
+        - /bin/cp -a * $DEPLOYPATH
