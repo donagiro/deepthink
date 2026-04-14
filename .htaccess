@@ -74,5 +74,9 @@
 # Redirect all 404s back to home (single-page site)
 ErrorDocument 404 /index.html
 
+# ─── BLOCK .GIT EXPOSURE ─────────────────────────────────────────
+RedirectMatch 404 /\.git(/|$)
+RedirectMatch 404 /\.github(/|$)
+
 # ─── REMOVE SERVER SIGNATURE ────────────────────────────────────
 ServerSignature Off
