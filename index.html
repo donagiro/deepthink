@@ -4,104 +4,395 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeepThink AI | Organizational Excellence</title>
+
+    <!-- SEO -->
+    <meta name="description" content="DeepThink AI partners with leaders to turn ambitious strategy into measurable results — through strategy execution, digital transformation, and culture change consulting.">
+    <meta name="keywords" content="strategy consulting, digital transformation, organizational consulting, culture change, M&A integration, innovation scaling">
+    <link rel="canonical" href="https://deepthinkai.org/">
+
+    <!-- Open Graph (LinkedIn, Facebook, Slack previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepthinkai.org/">
+    <meta property="og:title" content="DeepThink AI | Organizational Excellence">
+    <meta property="og:description" content="Bold visions demand execution. DeepThink AI partners with organizations to drive transformation that sticks.">
+    <meta property="og:image" content="https://deepthinkai.org/og-image.jpg">
+    <meta property="og:site_name" content="DeepThink AI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DeepThink AI | Organizational Excellence">
+    <meta name="twitter:description" content="Bold visions demand execution. DeepThink AI partners with organizations to drive transformation that sticks.">
+    <meta name="twitter:image" content="https://deepthinkai.org/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- No-JS fallback: ensure animated elements are visible -->
+    <noscript>
+        <style>
+            [data-aos], .animate-in { opacity: 1 !important; transform: none !important; }
+            .scroll-progress, .cursor-dot, .cursor-ring { display: none !important; }
+        </style>
+    </noscript>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">DeepThink AI</a>
-            <ul class="nav-links">
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Custom Cursor (desktop only, activated via JS) -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+    <!-- ═══════════════════════════════════════════════
+         HEADER / NAVIGATION
+    ═══════════════════════════════════════════════ -->
+    <header id="header">
+        <nav class="container nav-inner">
+            <a href="#" class="logo" aria-label="DeepThink AI — Home">
+                <svg class="logo-mark" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="36" height="36" rx="10" fill="url(#logoGrad)"/>
+                    <path d="M10 18C10 13.58 13.58 10 18 10C20.21 10 22.21 10.9 23.66 12.34" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M26 18C26 22.42 22.42 26 18 26C15.79 26 13.79 25.1 12.34 23.66" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="18" cy="18" r="3" fill="white"/>
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4F63F5"/>
+                            <stop offset="1" stop-color="#8B5CF6"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">DeepThink <span class="logo-ai">AI</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks" role="list">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#methodology">Methodology</a></li>
                 <li><a href="#industries">Industries</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary nav-cta">Schedule a Call</a>
+                <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="#services" class="mobile-link">Services</a></li>
+                <li><a href="#methodology" class="mobile-link">Methodology</a></li>
+                <li><a href="#industries" class="mobile-link">Industries</a></li>
+                <li><a href="#about" class="mobile-link">About</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary mobile-cta mobile-link">Schedule a Call</a>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Bold visions demand execution.</h1>
-            <p>But turning strategy into reality takes more than plans.</p>
-            <a href="#services" class="cta-button">Explore How We Help</a>
+    <!-- ═══════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════ -->
+    <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="hero-glow hero-glow--1"></div>
+            <div class="hero-glow hero-glow--2"></div>
+            <div class="hero-glow hero-glow--3"></div>
+            <div class="hero-grid"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-eyebrow animate-in" data-delay="0">
+                <span class="eyebrow-pip" aria-hidden="true"></span>
+                Organizational Consulting
+            </div>
+            <h1 class="hero-headline animate-in" data-delay="120">
+                Bold visions<br>
+                <em>demand execution.</em>
+            </h1>
+            <p class="hero-subtext animate-in" data-delay="240">
+                Turning strategy into reality takes more than plans —<br class="desktop-break">
+                it takes a partner who gets in the work alongside your team.
+            </p>
+            <div class="hero-actions animate-in" data-delay="360">
+                <a href="#contact" class="btn btn-primary btn-lg">Schedule a Consultation</a>
+                <a href="#services" class="btn btn-ghost btn-lg">Explore Services</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="scroll-indicator__line"></div>
+            <span>Scroll</span>
         </div>
     </section>
 
-    <section class="statement-section">
-        <div class="container">
-            <div class="animated-icon">📊</div>
-            <div class="statement">
-                Most consultants deliver <strong>presentations and progress.</strong>
+    <!-- ═══════════════════════════════════════════════
+         STATS BAR
+    ═══════════════════════════════════════════════ -->
+    <section class="stats-bar" aria-label="Key metrics">
+        <div class="container stats-grid">
+            <div class="stat-item" data-aos>
+                <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                <div class="stat-label">Client Engagements</div>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item" data-aos>
+                <div class="stat-number" data-target="4" data-prefix="$" data-suffix="B+">0</div>
+                <div class="stat-label">In Value Created</div>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item" data-aos>
+                <div class="stat-number" data-target="12" data-suffix="">0</div>
+                <div class="stat-label">Industries Served</div>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item" data-aos>
+                <div class="stat-number" data-target="93" data-suffix="%">0</div>
+                <div class="stat-label">Client Retention Rate</div>
             </div>
         </div>
     </section>
 
-    <section class="statement-section">
-        <div class="container">
-            <div class="animated-icon">🤝</div>
-            <div class="statement">
+    <!-- ═══════════════════════════════════════════════
+         STATEMENT SECTIONS
+    ═══════════════════════════════════════════════ -->
+    <section class="statements" aria-label="Our philosophy">
+        <div class="statement-block" data-aos>
+            <div class="statement-icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="14" width="6" height="12" rx="1.5" fill="currentColor" opacity="0.35"/>
+                    <rect x="11" y="8" width="6" height="18" rx="1.5" fill="currentColor" opacity="0.65"/>
+                    <rect x="20" y="2" width="6" height="24" rx="1.5" fill="currentColor"/>
+                </svg>
+            </div>
+            <p class="statement-text">
+                Most consultants deliver <strong>presentations and progress reports.</strong>
+            </p>
+        </div>
+
+        <div class="statement-block statement-block--alt" data-aos>
+            <div class="statement-icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="19" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 24c0-3.31 2.69-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M25 24c0-3.31-2.69-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M10 24c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="14" cy="17" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </div>
+            <p class="statement-text">
                 You need a partner that <strong>rolls up their sleeves</strong> and works alongside your team.
+            </p>
+        </div>
+
+        <div class="statement-block statement-block--accent" data-aos>
+            <div class="statement-icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 3c0 0 7 2 9 10l-3.5 2L18 20l-4-1.5L10 20l-1.5-5L5 13C7 5 14 3 14 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <circle cx="14" cy="13" r="2.5" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 22l1.5 3h5L18 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </div>
+            <p class="statement-text">
+                We're <strong>DeepThink AI.</strong> We help organizations turn ambitious goals into <strong>measurable results.</strong>
+            </p>
         </div>
     </section>
 
-    <section class="statement-section">
+    <!-- ═══════════════════════════════════════════════
+         SERVICES
+    ═══════════════════════════════════════════════ -->
+    <section class="services section-dark" id="services">
         <div class="container">
-            <div class="animated-icon">🚀</div>
-            <div class="statement">
-                We're <strong>DeepThink AI.</strong> We help organizations turn ambitious goals into measurable results.
-            </div>
-        </div>
-    </section>
+            <header class="section-header" data-aos>
+                <div class="eyebrow">What We Do</div>
+                <h2 class="section-title">Accelerate Your<br><em>Transformation</em></h2>
+                <p class="section-subtitle">Six practice areas. One mission: turning strategic ambition into competitive advantage.</p>
+            </header>
 
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Accelerate Your Transformation</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <span class="service-icon">⚡</span>
+
+                <div class="service-card" data-aos data-aos-delay="0">
+                    <div class="service-card__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="16" cy="16" r="5.5" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                            <line x1="16" y1="5" x2="16" y2="8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="27" y1="16" x2="23.5" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="16" y1="27" x2="16" y2="23.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="5" y1="16" x2="8.5" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3>Strategy Execution</h3>
-                    <p>Transform strategic planning into strategic action with clear roadmaps and accountability.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Transform strategic planning into strategic action with clear roadmaps, decision frameworks, and accountability systems built to last.</p>
+                    <span class="service-card__link" aria-hidden="true">Explore →</span>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🔄</span>
+
+                <div class="service-card" data-aos data-aos-delay="100">
+                    <div class="service-card__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="7" width="26" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 14h5M18 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M9 11h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M9 19h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3>Digital Transformation</h3>
-                    <p>Leverage technology and new operating models to stay competitive in the digital age.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Leverage technology and new operating models to stay competitive — going beyond tooling to fundamentally reshape how your organization works.</p>
+                    <span class="service-card__link" aria-hidden="true">Explore →</span>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🎯</span>
+
+                <div class="service-card" data-aos data-aos-delay="200">
+                    <div class="service-card__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 26c0-4.42 3.58-8 8-8s8 3.58 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="14" cy="11" r="5" stroke="currentColor" stroke-width="2"/>
+                            <path d="M24 18c2.21 0 4 1.79 4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="24" cy="11" r="3.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
                     <h3>Culture Change</h3>
-                    <p>Align your culture with your strategy to unlock sustainable competitive advantage.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Align your culture with your strategy to unlock sustainable competitive advantage. Culture is the execution system — we help you engineer it intentionally.</p>
+                    <span class="service-card__link" aria-hidden="true">Explore →</span>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">💡</span>
+
+                <div class="service-card" data-aos data-aos-delay="0">
+                    <div class="service-card__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4C11.58 4 8 7.58 8 12c0 3.07 1.63 5.75 4 7.28V22h8v-2.72C22.37 17.75 24 15.07 24 12c0-4.42-3.58-8-8-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M12 22v1a2 2 0 002 2h4a2 2 0 002-2v-1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 12l2-3 2 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="16" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3>Innovation Scaling</h3>
-                    <p>Break through organizational barriers to bring breakthrough ideas to market faster.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Break through organizational inertia to bring breakthrough ideas to market faster. We build the systems that sustain innovation beyond the initial spark.</p>
+                    <span class="service-card__link" aria-hidden="true">Explore →</span>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🔗</span>
-                    <h3>M&A Integration</h3>
-                    <p>Unite teams and cultures to deliver the promised value of mergers and acquisitions.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+
+                <div class="service-card" data-aos data-aos-delay="100">
+                    <div class="service-card__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="16" r="5" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="24" cy="16" r="5" stroke="currentColor" stroke-width="2"/>
+                            <path d="M13 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16 13.5l2.5 2.5L16 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>M&amp;A Integration</h3>
+                    <p>Unite teams and cultures to deliver the promised value of mergers and acquisitions — before synergy targets slip away and talent walks out the door.</p>
+                    <span class="service-card__link" aria-hidden="true">Explore →</span>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">📈</span>
+
+                <div class="service-card" data-aos data-aos-delay="200">
+                    <div class="service-card__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="4,26 10,17 16,20 22,11 28,7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="22,7 28,7 28,13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <h3>Growth Optimization</h3>
-                    <p>Optimize operations and refocus priorities after periods of rapid expansion.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Optimize operations, refocus priorities, and build scalable infrastructure after rapid expansion — so growth becomes an asset, not a liability.</p>
+                    <span class="service-card__link" aria-hidden="true">Explore →</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         METHODOLOGY
+    ═══════════════════════════════════════════════ -->
+    <section class="methodology" id="methodology">
+        <div class="container">
+            <header class="section-header section-header--light" data-aos>
+                <div class="eyebrow eyebrow--dark">How We Work</div>
+                <h2 class="section-title section-title--dark">The DeepThink<br><em>Approach</em></h2>
+                <p class="section-subtitle section-subtitle--dark">A proven four-phase methodology built on rigorous diagnosis, co-creation, and measurable outcomes — not templated playbooks.</p>
+            </header>
+
+            <div class="method-steps">
+                <div class="method-step" data-aos data-aos-delay="0">
+                    <div class="method-step__num" aria-hidden="true">01</div>
+                    <div class="method-step__body">
+                        <h3>Discover</h3>
+                        <p>Deep diagnostic assessment of your organization's challenges, culture, capabilities, and strategic gaps. We listen before we prescribe.</p>
+                    </div>
+                    <div class="method-step__arrow" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="method-step" data-aos data-aos-delay="150">
+                    <div class="method-step__num" aria-hidden="true">02</div>
+                    <div class="method-step__body">
+                        <h3>Design</h3>
+                        <p>Co-create a tailored transformation roadmap with your leadership team — built on what will actually work in your organization, not in a slide deck.</p>
+                    </div>
+                    <div class="method-step__arrow" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="method-step" data-aos data-aos-delay="300">
+                    <div class="method-step__num" aria-hidden="true">03</div>
+                    <div class="method-step__body">
+                        <h3>Deploy</h3>
+                        <p>Execute alongside your team with hands-on support, change management expertise, and accountability structures built to outlast our engagement.</p>
+                    </div>
+                    <div class="method-step__arrow" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="method-step method-step--last" data-aos data-aos-delay="450">
+                    <div class="method-step__num" aria-hidden="true">04</div>
+                    <div class="method-step__body">
+                        <h3>Deliver</h3>
+                        <p>Measure outcomes against agreed targets, sustain momentum, and embed lasting capability — so results outlive our engagement by years, not months.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="industries" id="industries">
+    <!-- ═══════════════════════════════════════════════
+         INDUSTRIES
+    ═══════════════════════════════════════════════ -->
+    <section class="industries section-dark" id="industries">
         <div class="container">
-            <h2>Industries We Serve</h2>
-            <div class="industries-grid">
+            <header class="section-header" data-aos>
+                <div class="eyebrow">Sector Expertise</div>
+                <h2 class="section-title">Industries<br><em>We Serve</em></h2>
+                <p class="section-subtitle">Deep expertise across the sectors where complex transformation challenges are highest-stakes.</p>
+            </header>
+
+            <div class="industries-grid" data-aos>
                 <div class="industry-tag">Healthcare</div>
                 <div class="industry-tag">Technology</div>
                 <div class="industry-tag">Financial Services</div>
@@ -111,77 +402,416 @@
                 <div class="industry-tag">Consumer Goods</div>
                 <div class="industry-tag">Life Sciences</div>
                 <div class="industry-tag">Energy</div>
-                <div class="industry-tag">Media</div>
+                <div class="industry-tag">Media &amp; Entertainment</div>
                 <div class="industry-tag">Non-Profit</div>
                 <div class="industry-tag">Public Sector</div>
             </div>
         </div>
     </section>
 
-    <section class="final-cta" id="contact">
+    <!-- ═══════════════════════════════════════════════
+         TESTIMONIALS / ABOUT
+    ═══════════════════════════════════════════════ -->
+    <section class="testimonials" id="about">
         <div class="container">
-            <h2>Let's Start the Conversation.</h2>
-            <p>Take the first step toward meaningful transformation by reaching out to discover how we can support your goals.</p>
-            <a href="#" class="cta-button">Get Started</a>
+            <header class="section-header section-header--light" data-aos>
+                <div class="eyebrow eyebrow--dark">Client Stories</div>
+                <h2 class="section-title section-title--dark">Results That<br><em>Speak</em></h2>
+                <p class="section-subtitle section-subtitle--dark">We measure success by one thing: the outcomes our clients achieve — not the hours we bill.</p>
+            </header>
+
+            <div class="testimonials-grid">
+                <figure class="testimonial-card" data-aos data-aos-delay="0">
+                    <div class="testimonial-card__mark" aria-hidden="true">"</div>
+                    <blockquote>
+                        <p>DeepThink AI didn't hand us a strategy deck and leave. They sat in our leadership meetings, challenged our assumptions, and helped us build execution capability that outlasted their engagement. Twelve months later, we are ahead of every target we set.</p>
+                    </blockquote>
+                    <figcaption class="testimonial-card__author">
+                        <strong>Chief Operating Officer</strong>
+                        <span>Regional Healthcare System</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="testimonial-card" data-aos data-aos-delay="150">
+                    <div class="testimonial-card__mark" aria-hidden="true">"</div>
+                    <blockquote>
+                        <p>We'd tried to crack our culture problem for three years before engaging DeepThink AI. They diagnosed what we couldn't see ourselves and designed an approach that actually moved the needle — with our team, not around it.</p>
+                    </blockquote>
+                    <figcaption class="testimonial-card__author">
+                        <strong>Chief Executive Officer</strong>
+                        <span>Series C Technology Company</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="testimonial-card" data-aos data-aos-delay="300">
+                    <div class="testimonial-card__mark" aria-hidden="true">"</div>
+                    <blockquote>
+                        <p>The M&amp;A integration was the most complex initiative our company had ever attempted. DeepThink AI brought the strategic framework and execution horsepower to get it done — on time, on budget, and with teams that genuinely wanted to work together.</p>
+                    </blockquote>
+                    <figcaption class="testimonial-card__author">
+                        <strong>VP of Strategy</strong>
+                        <span>Global Manufacturing Group</span>
+                    </figcaption>
+                </figure>
+            </div>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════════ -->
+    <section class="contact section-dark" id="contact">
+        <div class="container contact-inner">
+
+            <div class="contact-info" data-aos>
+                <div class="eyebrow">Get In Touch</div>
+                <h2 class="section-title">Let's Start the<br><em>Conversation.</em></h2>
+                <p class="contact-info__body">Tell us about your challenge and we'll schedule a no-obligation discovery call. We respond to every inquiry within one business day.</p>
+
+                <div class="contact-links">
+                    <a href="mailto:hello@deepthinkai.org" class="contact-link">
+                        <span class="contact-link__icon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M2 8l10 6 10-6"/>
+                            </svg>
+                        </span>
+                        hello@deepthinkai.org
+                    </a>
+                    <a href="https://linkedin.com/company/deepthinkai" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <span class="contact-link__icon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </span>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-wrap" data-aos data-aos-delay="150">
+                <!--
+                    FORMSPREE SETUP (takes 5 minutes):
+                    1. Visit https://formspree.io and create a free account
+                    2. Click "New Form" and name it (e.g. "DeepThink AI Contact")
+                    3. Copy the form endpoint URL (looks like: https://formspree.io/f/xpwzgkrb)
+                    4. Replace YOUR_FORM_ID below with your actual form ID (the part after /f/)
+                    Free tier: 50 submissions/month, responses go straight to your email.
+                -->
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                    action="https://formspree.io/f/YOUR_FORM_ID"
+                    method="POST"
+                >
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                            <input
+                                type="text" id="name" name="name"
+                                required autocomplete="name"
+                                placeholder="Jane Smith"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company <span aria-hidden="true">*</span></label>
+                            <input
+                                type="text" id="company" name="company"
+                                required
+                                placeholder="Acme Corp"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Work Email <span aria-hidden="true">*</span></label>
+                        <input
+                            type="email" id="email" name="email"
+                            required autocomplete="email"
+                            placeholder="jane@company.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="challenge">Primary Challenge</label>
+                        <select id="challenge" name="challenge">
+                            <option value="" disabled selected>Select an area…</option>
+                            <option value="strategy-execution">Strategy Execution</option>
+                            <option value="digital-transformation">Digital Transformation</option>
+                            <option value="culture-change">Culture Change</option>
+                            <option value="innovation-scaling">Innovation Scaling</option>
+                            <option value="ma-integration">M&amp;A Integration</option>
+                            <option value="growth-optimization">Growth Optimization</option>
+                            <option value="other">Something else</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell Us More</label>
+                        <textarea
+                            id="message" name="message"
+                            rows="4"
+                            placeholder="Give us a sense of the situation and what you're hoping to achieve…"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </button>
+
+                    <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Thank you — we'll be in touch within one business day.
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo" aria-label="DeepThink AI — Back to top">
+                    <svg class="logo-mark" width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="36" height="36" rx="10" fill="url(#logoGradFooter)"/>
+                        <path d="M10 18C10 13.58 13.58 10 18 10C20.21 10 22.21 10.9 23.66 12.34" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M26 18C26 22.42 22.42 26 18 26C15.79 26 13.79 25.1 12.34 23.66" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="18" cy="18" r="3" fill="white"/>
+                        <defs>
+                            <linearGradient id="logoGradFooter" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4F63F5"/>
+                                <stop offset="1" stop-color="#8B5CF6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">DeepThink <span class="logo-ai">AI</span></span>
+                </a>
+                <p class="footer-tagline">Turning ambitious strategy<br>into measurable results.</p>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/company/deepthinkai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/deepthinkai" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <div class="footer-nav__col">
+                    <h4>Services</h4>
+                    <ul role="list">
+                        <li><a href="#services">Strategy Execution</a></li>
+                        <li><a href="#services">Digital Transformation</a></li>
+                        <li><a href="#services">Culture Change</a></li>
+                        <li><a href="#services">Innovation Scaling</a></li>
+                        <li><a href="#services">M&amp;A Integration</a></li>
+                        <li><a href="#services">Growth Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav__col">
+                    <h4>Company</h4>
+                    <ul role="list">
+                        <li><a href="#methodology">Our Approach</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#about">Client Stories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 DeepThink AI. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Smooth scrolling for navigation links
+    (() => {
+        'use strict';
+
+        // ─── SCROLL PROGRESS BAR ─────────────────────────────────────
+        const progressBar = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = pct + '%';
+        }, { passive: true });
+
+        // ─── CUSTOM CURSOR (desktop / precise pointer devices only) ──
+        const cursorDot  = document.getElementById('cursorDot');
+        const cursorRing = document.getElementById('cursorRing');
+
+        if (window.matchMedia('(pointer: fine)').matches) {
+            document.body.classList.add('has-cursor');
+            let rx = 0, ry = 0, dx = 0, dy = 0;
+
+            document.addEventListener('mousemove', e => {
+                dx = e.clientX;
+                dy = e.clientY;
+                cursorDot.style.transform = `translate(${dx}px,${dy}px)`;
+            });
+
+            const tickRing = () => {
+                rx += (dx - rx) * 0.14;
+                ry += (dy - ry) * 0.14;
+                cursorRing.style.transform = `translate(${rx}px,${ry}px)`;
+                requestAnimationFrame(tickRing);
+            };
+            tickRing();
+
+            const hoverable = 'a,button,.service-card,.industry-tag,.testimonial-card';
+            document.querySelectorAll(hoverable).forEach(el => {
+                el.addEventListener('mouseenter', () => cursorRing.classList.add('is-hovered'));
+                el.addEventListener('mouseleave', () => cursorRing.classList.remove('is-hovered'));
+            });
+        }
+
+        // ─── HEADER SCROLL STATE ─────────────────────────────────────
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('header--scrolled', window.scrollY > 80);
+        }, { passive: true });
+
+        // ─── HAMBURGER / MOBILE MENU ─────────────────────────────────
+        const hamburger  = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            const open = hamburger.classList.toggle('is-active');
+            mobileMenu.classList.toggle('is-open', open);
+            hamburger.setAttribute('aria-expanded', open);
+            mobileMenu.setAttribute('aria-hidden', !open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('is-active');
+                mobileMenu.classList.remove('is-open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ─── SMOOTH SCROLL ───────────────────────────────────────────
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (!target) return;
+                e.preventDefault();
+                window.scrollTo({
+                    top: target.getBoundingClientRect().top + window.scrollY - 80,
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
+        // ─── SCROLL ANIMATIONS (data-aos elements) ───────────────────
+        const aosObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                if (!entry.isIntersecting) return;
+                const delay = parseInt(entry.target.dataset.aosDelay || 0);
+                setTimeout(() => entry.target.classList.add('is-visible'), delay);
+                aosObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        document.querySelectorAll('[data-aos]').forEach(el => aosObserver.observe(el));
+
+        // Hero elements animate in on load with staggered delay
+        document.querySelectorAll('.animate-in').forEach(el => {
+            setTimeout(
+                () => el.classList.add('is-visible'),
+                250 + parseInt(el.dataset.delay || 0)
+            );
+        });
+
+        // ─── ANIMATED STAT COUNTERS ──────────────────────────────────
+        const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+        function runCounter(el) {
+            const target   = parseInt(el.dataset.target, 10);
+            const prefix   = el.dataset.prefix  || '';
+            const suffix   = el.dataset.suffix   || '';
+            const duration = 1800;
+            const start    = performance.now();
+
+            const tick = (now) => {
+                const p = Math.min((now - start) / duration, 1);
+                el.textContent = prefix + Math.round(easeOutCubic(p) * target) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                runCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+
+        // ─── CONTACT FORM (AJAX via Formspree) ──────────────────────
+        const form       = document.getElementById('contactForm');
+        const submitBtn  = document.getElementById('submitBtn');
+        const formSuccess= document.getElementById('formSuccess');
+
+        if (form && form.action.indexOf('YOUR_FORM_ID') === -1) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btnText = submitBtn.querySelector('.btn-text');
+                submitBtn.disabled = true;
+                btnText.textContent = 'Sending…';
+
+                try {
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { Accept: 'application/json' }
+                    });
+                    if (res.ok) {
+                        form.style.display = 'none';
+                        formSuccess.classList.add('is-visible');
+                    } else {
+                        submitBtn.disabled = false;
+                        btnText.textContent = 'Try Again';
+                    }
+                } catch {
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Try Again';
                 }
             });
-        }, observerOptions);
+        }
 
-        // Observe all statement elements
-        document.querySelectorAll('.statement').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = 'none';
-            }
-        });
-
-        // Service cards hover effect
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
+    })();
     </script>
 </body>
 </html>
