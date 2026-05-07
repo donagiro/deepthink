@@ -11,7 +11,24 @@
       "Bash(git push:*)",
       "Bash(gh run:*)",
       "Bash(xargs ls *)",
-      "Bash(wc -l /c/Users/dagir/Sandbox/noticit/backend/*.py /c/Users/dagir/Sandbox/noticit/backend/routes/*.py /c/Users/dagir/Sandbox/noticit/backend/services/*.py)"
+      "Bash(wc -l /c/Users/dagir/Sandbox/noticit/backend/*.py /c/Users/dagir/Sandbox/noticit/backend/routes/*.py /c/Users/dagir/Sandbox/noticit/backend/services/*.py)",
+      "Bash(docker compose *)",
+      "Bash(curl *)",
+      "Bash(docker exec *)",
+      "Bash(grep -v grep echo \"---\")",
+      "Bash(cmd /c \"tasklist /FI \\\\\"PID eq 38484\\\\\"\")",
+      "Bash(cmd *)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(taskkill //F //PID 38484)",
+      "Bash(docker run *)",
+      "Read(//c/ProgramData/**)",
+      "Read(//c/Windows/System32/config/systemprofile/**)",
+      "Read(//c/Users/dagir/.cloudflared//**)",
+      "Bash(\"/c/Program Files \\(x86\\)/cloudflared/cloudflared.exe\" --version)",
+      "Bash(\"/c/Program Files \\(x86\\)/cloudflared/cloudflared.exe\" tunnel list)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(z['id'], z['name']\\) for z in d.get\\('result',[]\\)]\")",
+      "Bash(sc stop *)",
+      "Bash(tasklist *)"
     ]
   }
 }
