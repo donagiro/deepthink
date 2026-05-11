@@ -20,14 +20,14 @@ jobs:
           if_key_exists: replace
 
       - name: Add server to known hosts
-        run: ssh-keyscan -H -p 22 ${{ secrets.CPANEL_HOST }} >> ~/.ssh/known_hosts #22 is wrong, 21098 is correct
+        run: ssh-keyscan -H -p 21098 ${{ secrets.CPANEL_HOST }} >> ~/.ssh/known_hosts #22 is wrong, 21098 is correct
 
       # rsync transfers local repo files to the server — only changed files,
       # skipping .git, GitHub Actions config, and dev-only files.
       - name: Deploy via rsync
         run: |
           rsync -avz --delete \
-            -e "ssh -p 22" \
+            -e "ssh -p 21098" \
             --exclude='.git/' \
             --exclude='.github/' \
             --exclude='.hintrc' \
